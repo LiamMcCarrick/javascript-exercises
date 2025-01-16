@@ -1,4 +1,13 @@
 const removeFromArray = function(array, ...args) {
+    const newArray = [];
+    array.forEach((item) => {
+        if (!args.includes(item)){
+            newArray.push(item)
+        }
+    });
+    return newArray;
+};
+
     /*
     let args = Array.prototype.slice.call(arguments,1);
     let filteredArrary = array;
@@ -8,14 +17,6 @@ const removeFromArray = function(array, ...args) {
     }
 
     return filteredArrary */
-    const newArray = [];
-    array.forEach((item) => {
-        if (!args.includes(item)){
-            newArray.push(item)
-        }
-    });
-    return newArray;
-};
 
 console.log(removeFromArray([1,2,3,4],2,3));
 
